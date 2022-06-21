@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(
       /*MaterialApp(
@@ -48,12 +49,12 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: const [
-                CircleAvatar(
+              children: [
+                const CircleAvatar(
                   radius: 70,
                   backgroundImage: AssetImage('assets/images/kahve.jpg'),
                 ),
-                Text(
+                const Text(
                   "Bi' Kahve versem ?",
                   style: TextStyle(
                     fontFamily: 'DancingScript',
@@ -63,16 +64,21 @@ class MyApp extends StatelessWidget {
                 ),
                 Text(
                   'Sadece bir tık uzağında',
-                  style: TextStyle(
-                    fontFamily: 'DancingScript',
+                  style: GoogleFonts.lobster(
                     fontSize: 18,
                     color: Color(0xffefebe9),
                   ),
                 ),
+                /*TextStyle(
+                    fontFamily: 'DancingScript',
+                    fontSize: 18,
+                    color: Color(0xffefebe9),
+                  ),*/
               ],
             ),
           ),
-          /*Column(
+        ),
+        /*Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -105,7 +111,7 @@ class MyApp extends StatelessWidget {
               )
             ],
           ),*/
-          /*Row(
+        /*Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Flexible(
@@ -140,7 +146,7 @@ class MyApp extends StatelessWidget {
               ),
             ],
           ),*/ // Row Widgeti
-          /*Column(
+        /*Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
@@ -169,7 +175,7 @@ class MyApp extends StatelessWidget {
               ),
             ],
           ),*/ //Column Widgeti
-          /*Container(
+        /*Container(
             //transform: Matrix4.rotationZ(-0.2),
             width: 100,
             height: 100,
@@ -193,7 +199,6 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),*/ // Tekli Container
-        ),
       ),
     );
   }
