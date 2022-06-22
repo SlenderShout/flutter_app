@@ -30,6 +30,16 @@ class nimetler extends StatefulWidget {
 class _nimetlerState extends State<nimetler> {
   int i = 1;
 
+  void tikla() {
+    setState(() {
+      if (i > 4) {
+        i = 1;
+      } else {
+        i++;
+      }
+    });
+  } //Resim değişme fonksyonu
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -39,7 +49,7 @@ class _nimetlerState extends State<nimetler> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: tikla,
                   child: Image.asset('assets/images/corba_$i.jpg')),
             ),
           ),
