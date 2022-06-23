@@ -1,77 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/falci/fal_scaffold.dart';
+import 'package:flutter_app/nimetler/y_scaffold.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void main() => runApp(MyApp2());
+import 'kahve/bi_scaffold.dart';
+import 'kahve/newWidget.dart';
 
-class MyApp2 extends StatelessWidget {
-  const MyApp2({Key? key}) : super(key: key);
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text('Bugünün Spesiyali'),
-        ),
-        body: nimetler(),
-      ),
+      home: Falci(),
     );
   }
 }
 
-class nimetler extends StatefulWidget {
-  const nimetler({Key? key}) : super(key: key);
 
-  @override
-  State<nimetler> createState() => _nimetlerState();
-}
 
-class _nimetlerState extends State<nimetler> {
-  int i = 1;
 
-  void tikla() {
-    setState(() {
-      if (i > 4) {
-        i = 1;
-      } else {
-        i++;
-      }
-    });
-  } //Resim değişme fonksyonu
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                  onPressed: tikla,
-                  child: Image.asset('assets/images/corba_$i.jpg')),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                  onPressed: () {},
-                  child: Image.asset('assets/images/yemek_$i.jpg')),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                onPressed: () {},
-                child: Image.asset('assets/images/tatli_$i.jpg'),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+/*Row(
+children: [
+Icon(
+Icons.phone,
+color: Colors.white60,
+),
+SizedBox(
+width: 20,
+),
+Text(
+'+90 0512 423 21 12',
+style: TextStyle(fontSize: 15, color: Colors.white),
+)
+],
+),*/
