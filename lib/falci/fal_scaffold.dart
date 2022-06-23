@@ -28,81 +28,23 @@ class _FalciState extends State<Falci> {
         backgroundColor: Colors.purpleAccent,
       ),
       backgroundColor: Colors.purple,
-      body: Center(
-        child: Container(
-          padding: EdgeInsets.all(20),
-          child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image(
-                image: AssetImage('assets/images/falci.png'),
-                width: 150,
-              ),
-            ),
-            SizedBox20(),
-            Card(
-              child: ListTile(
-                onTap: () {
-                  setState(() {
-                    i = RandomFal(1, 5);
-                  });
-                  
-                },
-                leading: Icon(Icons.favorite, color: Colors.red, size: 30),
-                title: Text(
-                  'Aşk Tahmini',
-                  style: GoogleFonts.loveYaLikeASister(
-                      fontSize: 25, color: Colors.red),
-                ),
-              ),
-            ),
-            Card(
-              child: ListTile(
-                onTap: () {
-                  setState(() {
-                    i = RandomFal(6, 10);
-                  });
-                },
-                leading: Icon(Icons.money, color: Colors.green, size: 30),
-                title: Text(
-                  'Para Tahmini',
-                  style: GoogleFonts.loveYaLikeASister(
-                      fontSize: 25, color: Colors.green),
-                ),
-              ),
-            ),
-            Card(
-              child: ListTile(
-                onTap: () {
-                  setState(() {
-                    i = RandomFal(11, 15);
-                  });
-                },
-                leading: Icon(Icons.timelapse, color: Colors.blue, size: 30),
-                title: Text(
-                  'Günlük Tahmin',
-                  style: GoogleFonts.loveYaLikeASister(
-                      fontSize: 25, color: Colors.blue),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Container(
-                child: Text(
-                  yanitlar[i],
-                  style: GoogleFonts.inconsolata(
-                    fontSize: 20,
-                    color: Color.fromARGB(197, 255, 255, 255),
-                  ),
-                ),
-              ),
-            ),
-          ],
-    ),
-        ),
-      ),
+      body: FalciTeyze(asktahmini: () {
+                setState(() {
+                  i = RandomFal(1, 5);
+                });
+                
+              }, paratahmini:  () {
+                setState(() {
+                  i = RandomFal(6, 10);
+                });
+              }, guntahmini:  () {
+                setState(() {
+                  i = RandomFal(11, 15);
+                });
+              },),
+            
     );
   }
 }
+
+
